@@ -3,12 +3,19 @@ import Button from '@/components/Button'
 import JobCard from '@/components/JobCard'
 import TextField from '@/components/TextField'
 import { prisma } from '@/db'
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
+import jwt from "jsonwebtoken";
 
 const Page = () => {
     const getJobs = async () => {
         return await prisma.job.findMany()
     }
+    const token = cookies().get("jwt")?.value;
+    if (!token) return redirect('/auth')
 
+    const email = jwt.verify(token, process.env.JWT_SECRET!);
+    if (typeof email !== "string") return redirect('/auth')
     return (
         <div className='relative'>
             <form className='flex gap-2'>
