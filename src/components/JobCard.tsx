@@ -8,8 +8,8 @@ interface JobCardProps {
     description: string;
     requirements: string[];
     salary: string;
-    postedDate: string;
-    expiryDate: string;
+    postedDate: Date;
+    expiryDate: Date;
 }
 
 const JobCard: React.FC<JobCardProps> = ({
@@ -37,8 +37,8 @@ const JobCard: React.FC<JobCardProps> = ({
                 </ul>
             </div>
             <p className="mt-4 font-bold">Salary: {salary}</p>
-            <p className="text-gray-600 dark:text-gray-200">Posted: {postedDate}</p>
-            <p className="text-gray-600 dark:text-gray-200">Expires: {expiryDate}</p>
+            <p className="text-gray-600 dark:text-gray-200">Posted: {postedDate.toString()}</p>
+            <p className="text-gray-600 dark:text-gray-200">Expires: {expiryDate.toString()}</p>
             <Button label='Apply' className='mt-3' />
         </div>
     );
