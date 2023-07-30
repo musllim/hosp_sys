@@ -11,9 +11,28 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(uuid())
-  email     String   @unique
-  password  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id              String         @id @default(uuid())
+  email           String         @unique
+  password        String
+  firstName       String?
+  lastName        String?
+  country         String?
+  province        String?
+  district        String?
+  sector          String?
+  age             String?
+  about           String?
+  qualification   Qualification? @relation(fields: [qualificationId], references: [id])
+  resume          String?
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  qualificationId String?
+}
+
+model Qualification {
+  id           String @id @default(uuid())
+  name         String
+  fieldOfStudy String
+  grade        String
+  User         User[]
 }
