@@ -36,3 +36,15 @@ model Qualification {
   grade        String
   User         User[]
 }
+
+model Job {
+  id           String @id @default(uuid())
+  title       String
+  company     String
+  location    String
+  description String
+  requirements String[]
+  salary      String
+  postedDate  DateTime @default(now())
+  expiryDate  DateTime
+}

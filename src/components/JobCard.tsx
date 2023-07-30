@@ -23,10 +23,10 @@ const JobCard: React.FC<JobCardProps> = ({
     expiryDate,
 }) => {
     return (
-        <div className="border border-gray-300 shadow-md p-4 mt-4 rounded-md">
+        <div className="border border-gray-300 dark:border-gray-600 shadow-md p-4 mt-4 rounded-md">
             <h2 className="text-xl font-bold">{title}</h2>
-            <p className="text-gray-600">{company}</p>
-            <p className="text-gray-600">{location}</p>
+            <p className="text-gray-600 dark:text-gray-200">{company}</p>
+            <p className="text-gray-600 dark:text-gray-200">{location}</p>
             <p className="mt-2">{description}</p>
             <div className="mt-4">
                 <h3 className="font-bold">Requirements:</h3>
@@ -37,8 +37,8 @@ const JobCard: React.FC<JobCardProps> = ({
                 </ul>
             </div>
             <p className="mt-4 font-bold">Salary: {salary}</p>
-            <p className="text-gray-600">Posted: {postedDate}</p>
-            <p className="text-gray-600">Expires: {expiryDate}</p>
+            <p className="text-gray-600 dark:text-gray-200">Posted: {postedDate}</p>
+            <p className="text-gray-600 dark:text-gray-200">Expires: {expiryDate}</p>
             <Button label='Apply' className='mt-3' />
         </div>
     );

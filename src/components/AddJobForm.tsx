@@ -17,7 +17,7 @@ interface JobData {
 const AddJobForm = () => {
 
     return (
-        <form className="max-w-md top-0 sticky p-4 border border-gray-300 rounded-md">
+        <form className="max-w-md top-0 sticky p-4 border border-gray-300 dark:border-gray-600 rounded-md grid gap-2">
             <h2 className="text-xl font-bold mb-4">Add Job Listing</h2>
             <TextField
                 label="Job Title"
@@ -34,10 +34,12 @@ const AddJobForm = () => {
             <TextField
                 label="Description"
                 id="description"
+                type='textarea'
             />
             <TextField
                 label="Requirements"
                 id="requirements"
+                type='textarea'
             />
             <TextField
                 label="Salary"
