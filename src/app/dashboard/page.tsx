@@ -1,7 +1,6 @@
 import AddJobForm from '@/components/AddJobForm'
 import Button from '@/components/Button'
 import JobCard from '@/components/JobCard'
-import Skelton from '@/components/Skelton'
 import TextField from '@/components/TextField'
 import { prisma } from '@/db'
 
@@ -12,7 +11,6 @@ const Page = () => {
 
     return (
         <div className='relative'>
-            <Skelton />
             <form className='flex gap-2'>
                 <TextField id='search1' placeholder='job title, company' />
                 <TextField id='search2' placeholder='District, city' />
